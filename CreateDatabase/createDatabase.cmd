@@ -1,0 +1,1 @@
+SQLCMD -S . -E -i database.sql
