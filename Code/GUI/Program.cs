@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.UserSkins;
+using DevExpress.Skins;
 
-namespace GUI_QuanLyDaiLy
+namespace GUI
 {
     static class Program
     {
@@ -16,6 +17,8 @@ namespace GUI_QuanLyDaiLy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            BonusSkins.Register();
             Application.Run(new frmMain());
         }
     }
