@@ -40,5 +40,26 @@ namespace GUI
                 MessageBox.Show("Vui lòng kiểm tra lại", "Đăng nhập thất bại", MessageBoxButtons.OK , MessageBoxIcon.Error);
             }
         }
+
+        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnDangNhap;
+            this.CancelButton = btnHuy;
+        }
     }
 }

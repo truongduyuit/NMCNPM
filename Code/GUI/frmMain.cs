@@ -79,5 +79,10 @@ namespace GUI
                 this.Close();
             }
         }
+
+        private void infoUser_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
