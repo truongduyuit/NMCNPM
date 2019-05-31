@@ -50,19 +50,18 @@
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(324, 165);
+            this.panelControl1.Size = new System.Drawing.Size(432, 203);
             this.panelControl1.TabIndex = 0;
-            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // btnHuy
             // 
             this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
-            this.btnHuy.Location = new System.Drawing.Point(201, 123);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuy.Location = new System.Drawing.Point(268, 151);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(90, 28);
+            this.btnHuy.Size = new System.Drawing.Size(120, 34);
             this.btnHuy.TabIndex = 5;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -70,65 +69,62 @@
             // btnDangNhap
             // 
             this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
-            this.btnDangNhap.Location = new System.Drawing.Point(92, 123);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDangNhap.Location = new System.Drawing.Point(123, 151);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(98, 28);
+            this.btnDangNhap.Size = new System.Drawing.Size(131, 34);
             this.btnDangNhap.TabIndex = 4;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(92, 81);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMatKhau.Location = new System.Drawing.Point(123, 100);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(200, 21);
+            this.txtMatKhau.Size = new System.Drawing.Size(265, 23);
             this.txtMatKhau.TabIndex = 3;
             // 
             // txtTaiKhoan
             // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(92, 35);
-            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(123, 43);
+            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(200, 21);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(265, 23);
             this.txtTaiKhoan.TabIndex = 2;
-            this.txtTaiKhoan.TextChanged += new System.EventHandler(this.txtTaiKhoan_TextChanged);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(9, 78);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(12, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 24);
+            this.label2.Size = new System.Drawing.Size(115, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(9, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 24);
+            this.label1.Size = new System.Drawing.Size(115, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 165);
+            this.ClientSize = new System.Drawing.Size(432, 203);
             this.Controls.Add(this.panelControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDangNhap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

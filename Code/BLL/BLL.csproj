@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="BLL_Account.cs" />
     <Compile Include="BLL_DaiLy.cs" />
+    <Compile Include="BLL_LoaiDaiLy.cs" />
+    <Compile Include="BLL_Quan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

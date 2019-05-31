@@ -10,11 +10,30 @@ namespace BLL
 {
     public class BLL_DaiLy
     {
-        private DAL_DaiLy _daily;
+        private DAL_DaiLy daily = new DAL_DaiLy();
         public List<DTO_DaiLy> LayDanhSachDaiLy()
         {
-            _daily = new DAL_DaiLy();
-            return _daily.LayDanhSachDaiLy();
+            return daily.LayDanhSachDaiLy();
+        }
+
+        public bool ThemDaiLy(DTO_DaiLy dl)
+        {
+            return daily.ThemDaiLy(dl);
+        }
+
+        public bool XoaDaiLy(long id)
+        {
+            return daily.XoaDaiLy(id);
+        }
+
+        public bool SuaDaiLy(DTO_DaiLy dl)
+        {
+            return daily.SuaDaiLy(dl);
+        }
+
+        public List<DTO_DaiLy> TimKiemDaiLy(string tukhoa)
+        {
+            return daily.TimKiemDaiLy(tukhoa);
         }
     }
 }

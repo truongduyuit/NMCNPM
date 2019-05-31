@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="DAL_Account.cs" />
     <Compile Include="DAL_DaiLy.cs" />
+    <Compile Include="DAL_LoaiDaiLy.cs" />
+    <Compile Include="DAL_Quan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -33,20 +33,23 @@ namespace GUI
         {
             SetDefaultOpen(false);
             this.infoUser.Caption = "Xin chào, ";
-            frmDangNhap frm = new frmDangNhap();
-            frm.MdiParent = this;
-            frm.user = new frmDangNhap.GetInfoUser(LoadUserInfo);
-            frm.Show();
+            if (KiemTraTonTai("frmDangNhap") == null)
+            {
+                frmDangNhap frm = new frmDangNhap();
+                frm.MdiParent = this;
+                frm.user = new frmDangNhap.GetInfoUser(LoadUserInfo);
+                frm.Show();
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             DangNhap();
 
-            ucMain uc = new ucMain();
-            uc.Dock = DockStyle.Fill;
-            pnlMain.Controls.Clear();
-            pnlMain.Controls.Add(uc);
+            //ucMain uc = new ucMain();
+            //uc.Dock = DockStyle.Fill;
+            //pnlMain.Controls.Clear();
+            //pnlMain.Controls.Add(uc);
 
             pnlMain.Visible = false;
         }
@@ -67,7 +70,7 @@ namespace GUI
         }
 
         private void btnDangNhap_ItemClick(object sender, ItemClickEventArgs e)
-        {
+        {           
             DangNhap();
         }
 
@@ -80,9 +83,27 @@ namespace GUI
             }
         }
 
-        private void infoUser_ItemClick(object sender, ItemClickEventArgs e)
+        public Form KiemTraTonTai(string formName)
         {
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name.Equals(formName))
+                {
+                    frm.BringToFront();
+                    return frm;
+                }
+            }
+            return null;
+        }
 
+        private void btnDaiLy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmDaiLy") == null)
+            {
+                frmDaiLy frm = new frmDaiLy();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
     }
 }
