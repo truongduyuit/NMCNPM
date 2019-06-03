@@ -361,5 +361,7 @@ namespace GUI
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dataDaiLy.DataSource];
             myCurrencyManager.Refresh();
         }
+
+        
     }
 }

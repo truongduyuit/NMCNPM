@@ -105,5 +105,33 @@ namespace GUI
                 frm.Show();
             }
         }
+
+        private void btnDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
+            {
+            if (KiemTraTonTai("frmdoimatkhau") == null) {
+                frmdoimatkhau frm = new frmdoimatkhau();
+                
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnMatHang_ItemClick(object sender, ItemClickEventArgs e) {
+            if (KiemTraTonTai("frmmathang") == null) {
+                frmmathang frm = new frmmathang();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnBaoCaoDoanhSo_ItemClick(object sender, ItemClickEventArgs e) {
+            if (KiemTraTonTai("frbaocaodoanhso") == null) {
+                frmbaocaodoanhso frm = new frmbaocaodoanhso();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }
