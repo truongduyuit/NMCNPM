@@ -24,30 +24,24 @@ namespace DAL
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
-        public List<DTO_DaiLy> LayDanhSachDaiLy()
-        {
+        public List<DTO_DaiLy> LayDanhSachDaiLy() {
             List<DTO_DaiLy> ds = new List<DTO_DaiLy>();
 
             string query = string.Empty;
             query = "SELECT * FROM tblDaiLy";
 
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
+            using (SqlConnection con = new SqlConnection(connectionString)) {
+                using (SqlCommand cmd = new SqlCommand()) {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
 
-                    try
-                    {
+                    try {
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
 
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
+                        if (reader.HasRows == true) {
+                            while (reader.Read()) {
                                 DTO_DaiLy dl = new DTO_DaiLy();
                                 dl.Id = long.Parse(reader["id"].ToString());
                                 dl.TenDaiLy = reader.GetString(1);
@@ -62,9 +56,7 @@ namespace DAL
                         }
                         con.Close();
                         con.Dispose();
-                    }
-                    catch
-                    {
+                    } catch {
                         con.Close();
                         return null;
                     }

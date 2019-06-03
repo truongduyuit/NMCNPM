@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmbaocaodoanhso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbaocaodoanhso.Designer.cs">
+      <DependentUpon>frmbaocaodoanhso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDaiLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,18 @@
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmdoimatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmdoimatkhau.Designer.cs">
+      <DependentUpon>frmdoimatkhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmmathang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmmathang.Designer.cs">
+      <DependentUpon>frmmathang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -82,11 +100,20 @@
     <Compile Include="ucMain.Designer.cs">
       <DependentUpon>ucMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmbaocaodoanhso.resx">
+      <DependentUpon>frmbaocaodoanhso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDaiLy.resx">
       <DependentUpon>frmDaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmdoimatkhau.resx">
+      <DependentUpon>frmdoimatkhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmmathang.resx">
+      <DependentUpon>frmmathang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -120,6 +147,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{c031b49f-5ff3-4ccb-8145-2630383245e4}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{B830D512-8257-4663-9C40-5054BB1AF2FA}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{2a95f548-be3b-418e-b3b4-48015f10a326}</Project>

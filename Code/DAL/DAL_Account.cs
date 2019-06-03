@@ -13,16 +13,39 @@ namespace DAL
     {
         private string connectionString;
 
-        public string ConnectionString
-        {
+        public string ConnectionString {
             get { return connectionString; }
             set { connectionString = value; }
         }
 
-        public DAL_Account()
-        {
+        public DAL_Account() {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
+
+        public int UpdateAccount(string username, string password) {
+            using (SqlConnection con = new SqlConnection(connectionString)) {
+                using (SqlCommand cmd = new SqlCommand()) {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = "Update [dbo].[tblAccount] set passWord = '" + password + "' where userName = '"+username+"'";
+                    try {
+                        con.Open();
+                        var reader = cmd.ExecuteNonQuery();
+                        if (reader > 0) {
+                            con.Close();
+                            con.Dispose();
+                            return 1;
+                        }
+                    } catch {
+                        con.Close();
+                    }
+                }
+
+            }
+            return 0;
+        }
+    
+
 
         public int CheckLogin(string username , string password)
         {

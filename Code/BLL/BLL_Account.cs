@@ -14,6 +14,9 @@ namespace BLL
         public int CheckLogin(string username, string password)
         {
             return acc.CheckLogin(username, password);
-        } 
+        }
+        public int UpdateAccount(string username, string password) {
+            return acc.UpdateAccount(username, password);
+        }
     }
 }

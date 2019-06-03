@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    public class BLL_DaiLy
+  public class BLL_DaiLy
     {
         private DAL_DaiLy daily = new DAL_DaiLy();
         public List<DTO_DaiLy> LayDanhSachDaiLy()
