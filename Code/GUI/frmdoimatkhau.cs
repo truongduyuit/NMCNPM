@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmdoimatkhau : Form
+    public partial class frmDoiMatKhau : Form
     {
         
         private BLL_Account acc = new BLL_Account();
-        public frmdoimatkhau() {
+        public frmDoiMatKhau() {
             InitializeComponent();
         }
         

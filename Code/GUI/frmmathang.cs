@@ -13,16 +13,18 @@ using DTO;
 
 namespace GUI
 {
-    public partial class frmmathang : Form
+    public partial class frmMatHang : Form
     {
         private BLL_MatHang matHang = new BLL_MatHang();
-        public frmmathang() {
+        private BLL_DonViTinh donvitinh = new BLL_DonViTinh();
+        public frmMatHang() {
             InitializeComponent();
         }
         private void SetDefault(bool status) {
             this.txtMaMatHang.Enabled = false;
             this.txtTenMatHang.Enabled = status;
             this.txtDonGia.Enabled = status;
+            this.cbDVT.Enabled = status;
             
         }
         private void ResetValue() {
@@ -35,13 +37,17 @@ namespace GUI
         private void frmmahang_Load(object sender, EventArgs e) {
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            if (matHang.LayDanhSachMatHang() != null) {
+            if (matHang.LayDanhSachMatHang() != null && donvitinh.hienthidanhsach() != null) {
                 this.dataMatHang.DataSource = matHang.LayDanhSachMatHang();
+                this.cbDVT.DataSource = donvitinh.hienthidanhsach();
+                cbDVT.DisplayMember = "ten";
+                cbDVT.ValueMember = "id";
                 CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dataMatHang.DataSource];
                 myCurrencyManager.Refresh();
             } else {
                 MessageBox.Show("Lỗi truy xuất dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
             SetDefault(false);
         }
@@ -51,6 +57,7 @@ namespace GUI
                 try {
                     int index = e.RowIndex;
                     DataGridViewRow row = this.dataMatHang.Rows[index];
+                    cbDVT.SelectedValue = row.Cells[3].Value;
                     this.txtMaMatHang.Text = row.Cells[0].Value.ToString();
                     this.txtTenMatHang.Text = row.Cells[1].Value.ToString();
                     this.txtDonGia.Text = row.Cells[2].Value.ToString();
@@ -99,6 +106,7 @@ namespace GUI
                         DTO_MatHang dl = new DTO_MatHang();
                         dl.TenMatHang = this.txtTenMatHang.Text;
                         dl.Dongia = uint.Parse(this.txtDonGia.Text);
+                        dl.MaDVT = long.Parse(this.cbDVT.SelectedValue.ToString());
                         
 
                         if (matHang.ThemMatHang(dl)) {
@@ -145,6 +153,7 @@ namespace GUI
                         mh.MaMatHang = long.Parse(this.txtMaMatHang.Text);
                         mh.TenMatHang = this.txtTenMatHang.Text;
                         mh.Dongia = uint.Parse(this.txtDonGia.Text);
+                        mh.MaDVT = long.Parse(this.cbDVT.SelectedValue.ToString());
 
                         if (matHang.SuaMatHang(mh)) {
                             btnSua.Text = "Sửa";

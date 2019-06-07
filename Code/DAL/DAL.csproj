@@ -45,6 +45,7 @@
     <Compile Include="DAL_Account.cs" />
     <Compile Include="DAL_BaoCaoDoanhSo.cs" />
     <Compile Include="DAL_DaiLy.cs" />
+    <Compile Include="DAL_DonViTinh.cs" />
     <Compile Include="DAL_LoaiDaiLy.cs" />
     <Compile Include="DAL_MatHang.cs" />
     <Compile Include="DAL_Quan.cs" />

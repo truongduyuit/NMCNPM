@@ -15,6 +15,8 @@ namespace DTO
 
         private uint dongia;
 
+        private long maDVT;
+
         [DisplayName("Mã Mặt Hàng")]
         public long MaMatHang { get => maMatHang; set => maMatHang = value; }
 
@@ -23,5 +25,6 @@ namespace DTO
 
         [DisplayName("Đơn Giá")]
         public uint Dongia { get => dongia; set => dongia = value; }
+        public long MaDVT { get => maDVT; set => maDVT = value; }
     }
 }

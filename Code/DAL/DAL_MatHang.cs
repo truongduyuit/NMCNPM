@@ -43,7 +43,8 @@ namespace DAL
                                 DTO_MatHang dl = new DTO_MatHang();
                                 dl.MaMatHang = long.Parse(reader["id"].ToString());
                                 dl.TenMatHang = reader.GetString(1);
-                                dl.Dongia = (uint)reader.GetDecimal(2);
+                                dl.MaDVT = long.Parse(reader["maDonViTinh"].ToString());
+                                dl.Dongia = (uint)reader.GetDecimal(3);
                                 ds.Add(dl);
                             }
                         }
@@ -62,8 +63,8 @@ namespace DAL
         public bool ThemMatHang(DTO_MatHang dl) {
 
             string query = string.Empty;
-            query += "INSERT INTO tblMatHang ([tenMH],[DonGia]) ";
-            query += " VALUES (@tenMH, @DonGia)";
+            query += "INSERT INTO tblMatHang ([tenMatHang],[DonGia],[maDonViTinh]) ";
+            query += " VALUES (@tenMH, @DonGia, @madonvitinh)";
 
             using (SqlConnection con = new SqlConnection(connectionString)) {
                 using (SqlCommand cmd = new SqlCommand()) {
@@ -73,9 +74,10 @@ namespace DAL
 
                     cmd.Parameters.AddWithValue("@tenMH",dl.TenMatHang);
                     cmd.Parameters.AddWithValue("@DonGia", Decimal.Parse(dl.Dongia.ToString()));
+                    cmd.Parameters.AddWithValue("@madonvitinh", dl.MaDVT);
 
-                    try {
-                        con.Open();
+                    //   try {
+                    con.Open();
                         if (cmd.ExecuteNonQuery() > 0) {
                             con.Close();
                             con.Dispose();
@@ -84,11 +86,11 @@ namespace DAL
                             con.Close();
                             return false;
                         }
-                    } catch {
+                   // } catch {
                         con.Close();
                         return false;
                     }
-                }
+                //}
             }
         }
 
@@ -125,7 +127,7 @@ namespace DAL
         public bool SuaMatHang(DTO_MatHang dl) {
             string query = string.Empty;
             query = "UPDATE [tblMatHang] " +
-                "SET [tenMH] =@tenMH , [DonGia] = @DonGia WHERE [Id] = @id";
+                "SET [tenMatHang] = @tenMatHang ,[maDonViTinh] = @madonvitinh, [DonGia] = @DonGia WHERE [Id] = @id";
             //query = "SuaDaiLy";
 
             using (SqlConnection con = new SqlConnection(connectionString)) {
@@ -134,9 +136,10 @@ namespace DAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
 
-                    cmd.Parameters.AddWithValue("@tenMH", dl.TenMatHang);
+                    cmd.Parameters.AddWithValue("@tenMatHang", dl.TenMatHang);
                     cmd.Parameters.AddWithValue("@DonGia", Decimal.Parse(dl.Dongia.ToString()));
                     cmd.Parameters.AddWithValue("@id", dl.MaMatHang);
+                    cmd.Parameters.AddWithValue("@madonvitinh", dl.MaDVT);
 
                     try {
                         con.Open();
