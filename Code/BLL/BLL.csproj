@@ -44,6 +44,7 @@
     <Compile Include="BLL_Account.cs" />
     <Compile Include="BLL_BaoCaoDoanhSo.cs" />
     <Compile Include="BLL_DaiLy.cs" />
+    <Compile Include="BLL_DonViTinh.cs" />
     <Compile Include="BLL_LoaiDaiLy.cs" />
     <Compile Include="BLL_MatHang.cs" />
     <Compile Include="BLL_Quan.cs" />

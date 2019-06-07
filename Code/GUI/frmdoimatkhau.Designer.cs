@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmdoimatkhau
+    partial class frmDoiMatKhau
     {
         /// <summary>
         /// Required designer variable.

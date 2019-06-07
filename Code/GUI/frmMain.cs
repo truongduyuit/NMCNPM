@@ -109,7 +109,7 @@ namespace GUI
         private void btnDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
             {
             if (KiemTraTonTai("frmdoimatkhau") == null) {
-                frmdoimatkhau frm = new frmdoimatkhau();
+                frmDoiMatKhau frm = new frmDoiMatKhau();
                 
                 frm.MdiParent = this;
                 frm.Show();
@@ -118,7 +118,7 @@ namespace GUI
 
         private void btnMatHang_ItemClick(object sender, ItemClickEventArgs e) {
             if (KiemTraTonTai("frmmathang") == null) {
-                frmmathang frm = new frmmathang();
+                frmMatHang frm = new frmMatHang();
 
                 frm.MdiParent = this;
                 frm.Show();

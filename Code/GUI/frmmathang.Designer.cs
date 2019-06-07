@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmmathang
+    partial class frmMatHang
     {
         /// <summary>
         /// Required designer variable.
@@ -25,12 +25,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmmathang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMatHang));
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dataMatHang = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,11 +43,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataMatHang = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbDVT = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataMatHang)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTimKiem
@@ -104,6 +106,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(704, 553);
             this.panel3.TabIndex = 16;
+            // 
+            // dataMatHang
+            // 
+            this.dataMatHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataMatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataMatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataMatHang.Location = new System.Drawing.Point(0, 73);
+            this.dataMatHang.Name = "dataMatHang";
+            this.dataMatHang.Size = new System.Drawing.Size(704, 481);
+            this.dataMatHang.TabIndex = 0;
+            this.dataMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMatHang_CellClick);
             // 
             // label1
             // 
@@ -189,7 +204,7 @@
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(15, 156);
+            this.label9.Location = new System.Drawing.Point(15, 196);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 19);
@@ -199,7 +214,7 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(111, 156);
+            this.txtDonGia.Location = new System.Drawing.Point(111, 196);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(2);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(166, 20);
@@ -209,6 +224,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbDVT);
             this.panel1.Controls.Add(this.txtDonGia);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.btnXoa);
@@ -216,6 +232,7 @@
             this.panel1.Controls.Add(this.btnThemMatHang);
             this.panel1.Controls.Add(this.txtTenMatHang);
             this.panel1.Controls.Add(this.txtMaMatHang);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -226,20 +243,25 @@
             this.panel1.Size = new System.Drawing.Size(300, 553);
             this.panel1.TabIndex = 17;
             // 
-            // dataMatHang
+            // label4
             // 
-            this.dataMatHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataMatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataMatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataMatHang.Location = new System.Drawing.Point(0, 73);
-            this.dataMatHang.Name = "dataMatHang";
-            this.dataMatHang.Size = new System.Drawing.Size(704, 481);
-            this.dataMatHang.TabIndex = 0;
-            this.dataMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMatHang_CellClick);
+            this.label4.Location = new System.Drawing.Point(15, 152);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 19);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Đơn vị tính:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // frmmathang
+            // cbDVT
+            // 
+            this.cbDVT.FormattingEnabled = true;
+            this.cbDVT.Location = new System.Drawing.Point(112, 149);
+            this.cbDVT.Name = "cbDVT";
+            this.cbDVT.Size = new System.Drawing.Size(165, 21);
+            this.cbDVT.TabIndex = 22;
+            // 
+            // frmMatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,16 +269,16 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Name = "frmmathang";
+            this.Name = "frmMatHang";
             this.Text = "frmmahang";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmmahang_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataMatHang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMatHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +301,7 @@
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataMatHang;
+        private System.Windows.Forms.ComboBox cbDVT;
+        private System.Windows.Forms.Label label4;
     }
 }

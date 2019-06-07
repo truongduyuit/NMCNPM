@@ -74,17 +74,17 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmdoimatkhau.cs">
+    <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmdoimatkhau.Designer.cs">
-      <DependentUpon>frmdoimatkhau.cs</DependentUpon>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmmathang.cs">
+    <Compile Include="frmMatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmmathang.Designer.cs">
-      <DependentUpon>frmmathang.cs</DependentUpon>
+    <Compile Include="frmMatHang.Designer.cs">
+      <DependentUpon>frmMatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -109,11 +109,11 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmdoimatkhau.resx">
-      <DependentUpon>frmdoimatkhau.cs</DependentUpon>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmmathang.resx">
-      <DependentUpon>frmmathang.cs</DependentUpon>
+    <EmbeddedResource Include="frmMatHang.resx">
+      <DependentUpon>frmMatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
