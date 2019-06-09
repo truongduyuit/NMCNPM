@@ -9,8 +9,10 @@ namespace BLL
 {
     public class BLL_Account
     {
+        #region prop
         private DAL_Account acc = new DAL_Account();
-
+        #endregion
+        #region method
         public int CheckLogin(string username, string password)
         {
             return acc.CheckLogin(username, password);
@@ -18,5 +20,6 @@ namespace BLL
         public int UpdateAccount(string username, string password) {
             return acc.UpdateAccount(username, password);
         }
+        #endregion
     }
 }

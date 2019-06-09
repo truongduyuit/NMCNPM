@@ -10,7 +10,10 @@ namespace BLL
 {
   public  class BLL_MatHang
     {
+        #region prop
         private DAL_Mathang mathang = new DAL_Mathang();
+        #endregion
+        #region method
         public List<DTO_MatHang> LayDanhSachMatHang() {
             return mathang.LayDanhSachMatHang();
         }
@@ -30,5 +33,6 @@ namespace BLL
         public List<DTO_MatHang> TimKiemMatHang(string tukhoa) {
              return mathang.TimKiemMatHang(tukhoa);
         }
+        #endregion
     }
 }

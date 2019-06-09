@@ -10,12 +10,15 @@ namespace DAL
 {
   public  class DAL_BaoCaoDoanhSo
     {
+        #region prop
         private string connectionString;
-
+        
         public string ConnectionString {
             get { return connectionString; }
             set { connectionString = value; }
         }
+        #endregion
+        #region method
         public List<DTO_BaoCaoDoanhSo> list = new List<DTO_BaoCaoDoanhSo>();
         public DAL_BaoCaoDoanhSo() {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
@@ -25,8 +28,7 @@ namespace DAL
             List<DTO_BaoCaoDoanhSo> List = new List<DTO_BaoCaoDoanhSo>();
 
             String query = string.Empty;
-            query = "Select * from tblBaoCaodoanhso where matg in (select id from tblthoigian where (thang >= @startmonth and nam = @startyear) and ( thang <= @endmonth and nam = @endyear ) or ( thang < @startmonth and nam > @startyear and thang <= @endmonth and nam = @endyear ))";
-
+            query = "select * from tblBaoCaoDoanhSo where maTG in (select id from tblThoiGian where( (nam > @startyear  and nam < @endyear) or (nam = @startyear and thang >= @startmonth and nam < @endyear ) or (nam = @endyear and thang <= @endmonth and nam > @startyear) or ( nam = @startyear and nam = @endyear and thang >= @startmonth and thang <= @endmonth) ))";
             using (SqlConnection con = new SqlConnection(connectionString)) {
                 using (SqlCommand cmd = new SqlCommand()) {
                     cmd.Connection = con;
@@ -37,28 +39,28 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@startyear", startyear);
                     cmd.Parameters.AddWithValue("@endmonth", endmonth);
                     cmd.Parameters.AddWithValue("@endyear", endyear);
-                    try {
+                   // try {
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.HasRows == true) {
                             while (reader.Read()) {
-                                DTO_BaoCaoDoanhSo dl = new DTO_BaoCaoDoanhSo();
-                                dl.Id = long.Parse(reader["id"].ToString());
-                                dl.Madaily = long.Parse(reader["maDL"].ToString());
-                            dl.Tyle = float.Parse(reader["tyle"].ToString());
-                                dl.Sophieuxuat = int.Parse(reader["soPhieuXuat"].ToString());
-                                dl.Tongtrigia = (uint)reader.GetDecimal(3);
+                                DTO_BaoCaoDoanhSo bcds = new DTO_BaoCaoDoanhSo();
+                                bcds.Id = long.Parse(reader["id"].ToString());
+                                bcds.Madaily = long.Parse(reader["maDL"].ToString());
+                            bcds.Tyle = float.Parse(reader["tyle"].ToString());
+                                bcds.Sophieuxuat = int.Parse(reader["soPhieuXuat"].ToString());
+                                bcds.Tongtrigia = (uint)reader.GetDecimal(3);
 
-                                List.Add(dl);
+                                List.Add(bcds);
                             }
                         }
                         con.Close();
                         con.Dispose();
-                    } catch {
-                        con.Close();
-                        return null;
-                    }
+                    //} catch {
+                   //     con.Close();
+                   //     return null;
+                 //   }
                     list = List;
                     return List;
                 }
@@ -72,6 +74,7 @@ namespace DAL
                 tong += list[i].Tongtrigia;
             return tong;
         }
+        #endregion
     }
 }
 

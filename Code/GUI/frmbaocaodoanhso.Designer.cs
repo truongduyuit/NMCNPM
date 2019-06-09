@@ -25,7 +25,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.BtnBaoCao = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmbaocaodoanhso));
             this.dtpkNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.dtpkNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,28 +37,17 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.datadoanhthu = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThongKe = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datadoanhthu)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BtnBaoCao
-            // 
-            this.BtnBaoCao.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBaoCao.Location = new System.Drawing.Point(446, 68);
-            this.BtnBaoCao.Name = "BtnBaoCao";
-            this.BtnBaoCao.Size = new System.Drawing.Size(75, 26);
-            this.BtnBaoCao.TabIndex = 0;
-            this.BtnBaoCao.Text = "Báo cáo";
-            this.BtnBaoCao.UseVisualStyleBackColor = true;
-            this.BtnBaoCao.Click += new System.EventHandler(this.BtnBaoCao_Click);
-            // 
             // dtpkNgayBatDau
             // 
             this.dtpkNgayBatDau.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpkNgayBatDau.CustomFormat = "dd/MM/yyyy";
+            this.dtpkNgayBatDau.CustomFormat = "MM/yyyy";
             this.dtpkNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkNgayBatDau.Location = new System.Drawing.Point(185, 71);
             this.dtpkNgayBatDau.Name = "dtpkNgayBatDau";
@@ -68,7 +57,7 @@
             // dtpkNgayKetThuc
             // 
             this.dtpkNgayKetThuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpkNgayKetThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtpkNgayKetThuc.CustomFormat = "MM/yyyy";
             this.dtpkNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkNgayKetThuc.Location = new System.Drawing.Point(608, 71);
             this.dtpkNgayKetThuc.Name = "dtpkNgayKetThuc";
@@ -80,7 +69,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(394, 9);
+            this.label1.Location = new System.Drawing.Point(397, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 20);
             this.label1.TabIndex = 2;
@@ -93,9 +82,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(656, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 16);
+            this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Ngày kết thúc";
+            this.label3.Text = "Tháng kết thúc";
             // 
             // label2
             // 
@@ -104,9 +93,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(231, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 16);
+            this.label2.Size = new System.Drawing.Size(95, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Ngày bắt đầu";
+            this.label2.Text = "Tháng bắt đầu";
             // 
             // label6
             // 
@@ -127,7 +116,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.BtnBaoCao);
+            this.panel2.Controls.Add(this.btnThongKe);
             this.panel2.Controls.Add(this.dtpkNgayBatDau);
             this.panel2.Controls.Add(this.dtpkNgayKetThuc);
             this.panel2.Controls.Add(this.label1);
@@ -168,6 +157,17 @@
             this.panel1.Size = new System.Drawing.Size(967, 358);
             this.panel1.TabIndex = 14;
             // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThongKe.Location = new System.Drawing.Point(444, 49);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(105, 42);
+            this.btnThongKe.TabIndex = 3;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.Click += new System.EventHandler(this.BtnBaoCao_Click);
+            // 
             // frmbaocaodoanhso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,8 +191,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtnBaoCao;
         private System.Windows.Forms.DateTimePicker dtpkNgayBatDau;
         private System.Windows.Forms.DateTimePicker dtpkNgayKetThuc;
         private System.Windows.Forms.Label label1;
@@ -204,5 +202,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView datadoanhthu;
         private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton btnThongKe;
     }
 }

@@ -15,8 +15,11 @@ namespace GUI
 {
     public partial class frmMatHang : Form
     {
+        #region prop
         private BLL_MatHang matHang = new BLL_MatHang();
         private BLL_DonViTinh donvitinh = new BLL_DonViTinh();
+        #endregion
+        #region method
         public frmMatHang() {
             InitializeComponent();
         }
@@ -81,14 +84,7 @@ namespace GUI
                 MessageBox.Show("Bạn phải nhập đơn giá!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDonGia.Focus();
                 return false;
-            }
-            
-            //if (txtSoDienThoai.Text.Trim().Length != 10)
-            //{
-            //    MessageBox.Show("Số điện thoại không đúng", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    txtSoDienThoai.Focus();
-            //    return false;
-            //}
+            }           
             return true;
         }
         private void btnThemMatHang_Click(object sender, EventArgs e) {
@@ -240,4 +236,5 @@ namespace GUI
             }
         }
     }
+    #endregion
 }

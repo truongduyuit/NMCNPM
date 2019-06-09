@@ -126,8 +126,17 @@ namespace GUI
         }
 
         private void btnBaoCaoDoanhSo_ItemClick(object sender, ItemClickEventArgs e) {
-            if (KiemTraTonTai("frbaocaodoanhso") == null) {
+            if (KiemTraTonTai("frmbaocaodoanhso") == null) {
                 frmbaocaodoanhso frm = new frmbaocaodoanhso();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnPhieuThu_ItemClick(object sender, ItemClickEventArgs e) {
+            if (KiemTraTonTai("frmPhieuThu") == null) {
+                frmPhieuThu frm = new frmPhieuThu();
 
                 frm.MdiParent = this;
                 frm.Show();

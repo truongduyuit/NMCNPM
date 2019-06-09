@@ -14,15 +14,13 @@ namespace GUI
 {
     public partial class frmDoiMatKhau : Form
     {
-        
+        #region prop
         private BLL_Account acc = new BLL_Account();
+        #endregion
+        #region method
         public frmDoiMatKhau() {
             InitializeComponent();
         }
-        
-
-        
-
         private void btnConfirm_Click(object sender, EventArgs e) {
             if(Validated())
                 {
@@ -40,9 +38,6 @@ namespace GUI
                 
                 }
         }
-
-       
-
         private bool Validated() {
             if(string.IsNullOrEmpty(txtOldPass.Text)) 
                 {
@@ -76,9 +71,9 @@ namespace GUI
                 }
             return true;
         }
-
         private void btncancel_Click(object sender, EventArgs e) {
             this.Close();
         }
     }
+    #endregion
 }

@@ -47,6 +47,7 @@
     <Compile Include="DTO_DonViTinh.cs" />
     <Compile Include="DTO_LoaiDaiLy.cs" />
     <Compile Include="DTO_MatHang.cs" />
+    <Compile Include="DTO_PhieuThu.cs" />
     <Compile Include="DTO_Quan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

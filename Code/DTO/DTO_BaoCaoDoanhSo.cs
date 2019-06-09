@@ -8,6 +8,7 @@ namespace DTO
 {
    public class DTO_BaoCaoDoanhSo
     {
+        #region prop
         private long id;
 
         private int sophieuxuat;
@@ -26,5 +27,6 @@ namespace DTO
         public uint Tongtrigia { get => tongtrigia; set => tongtrigia = value; }
         public float Tyle { get => tyle; set => tyle = value; }
         public long MaTG { get => maTG; set => maTG = value; }
+        #endregion
     }
 }
