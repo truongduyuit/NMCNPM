@@ -9,6 +9,7 @@ namespace DTO
 {
   public  class DTO_MatHang
     {
+        #region prop
         private long maMatHang;
 
         private string tenMatHang;
@@ -26,5 +27,6 @@ namespace DTO
         [DisplayName("Đơn Giá")]
         public uint Dongia { get => dongia; set => dongia = value; }
         public long MaDVT { get => maDVT; set => maDVT = value; }
+        #endregion
     }
 }

@@ -48,6 +48,7 @@
     <Compile Include="DAL_DonViTinh.cs" />
     <Compile Include="DAL_LoaiDaiLy.cs" />
     <Compile Include="DAL_MatHang.cs" />
+    <Compile Include="DAL_PhieuThu.cs" />
     <Compile Include="DAL_Quan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

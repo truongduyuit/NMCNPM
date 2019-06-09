@@ -47,6 +47,7 @@
     <Compile Include="BLL_DonViTinh.cs" />
     <Compile Include="BLL_LoaiDaiLy.cs" />
     <Compile Include="BLL_MatHang.cs" />
+    <Compile Include="BLL_PhieuThu.cs" />
     <Compile Include="BLL_Quan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
