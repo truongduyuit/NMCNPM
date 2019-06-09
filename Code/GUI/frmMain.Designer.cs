@@ -50,6 +50,9 @@
             this.infoUser = new DevExpress.XtraBars.BarStaticItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPhieuThu = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.tabHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.menuGroup_1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.menuGroup_2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -61,18 +64,15 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabTroGiup = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pnlMain = new DevExpress.XtraEditors.PanelControl();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnPhieuThu = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -280,6 +280,32 @@
             this.barEditItem2.Id = 28;
             this.barEditItem2.Name = "barEditItem2";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 29;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnPhieuThu
+            // 
+            this.btnPhieuThu.Caption = "Phiếu thu";
+            this.btnPhieuThu.Id = 30;
+            this.btnPhieuThu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuThu.ImageOptions.Image")));
+            this.btnPhieuThu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhieuThu.ImageOptions.LargeImage")));
+            this.btnPhieuThu.LargeWidth = 80;
+            this.btnPhieuThu.Name = "btnPhieuThu";
+            this.btnPhieuThu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhieuThu.Tag = "1";
+            this.btnPhieuThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuThu_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 31;
+            this.barButtonItem4.LargeWidth = 80;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // tabHeThong
             // 
             this.tabHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -356,6 +382,18 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Phiếu";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnPhieuThu);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
             // repositoryItemTextEdit1
             // 
             this.repositoryItemTextEdit1.AutoHeight = false;
@@ -387,35 +425,6 @@
             // 
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Phiếu";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 29;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnPhieuThu);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            // 
-            // btnPhieuThu
-            // 
-            this.btnPhieuThu.Caption = "Phiếu thu";
-            this.btnPhieuThu.Id = 30;
-            this.btnPhieuThu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuThu.ImageOptions.Image")));
-            this.btnPhieuThu.LargeWidth = 80;
-            this.btnPhieuThu.Name = "btnPhieuThu";
-            this.btnPhieuThu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnPhieuThu.Tag = "1";
-            this.btnPhieuThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuThu_ItemClick);
-            // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "Đăng Nhập";
@@ -433,14 +442,6 @@
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.LargeWidth = 80;
             this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 31;
-            this.barButtonItem4.LargeWidth = 80;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // frmMain
             // 
