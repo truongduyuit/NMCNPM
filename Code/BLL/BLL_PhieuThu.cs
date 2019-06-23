@@ -17,6 +17,19 @@ namespace BLL
         public bool themPhieuThu(DTO_PhieuThu phieuthu) {
             return pt.ThemPhieuThu(phieuthu);
         }
+
+        public List<DTO_PhieuThu> LayDanhSachPhieuThu() {
+            return pt.LayDanhSachPhieuThu();
+        }
+
+        public bool XoaPhieuThu(long id) {
+            return pt.XoaPhieuThu(id);
+        }
+
+        public bool SuaPhieuThu(DTO_PhieuThu s) {
+            return pt.SuaPhieuThu(s);
+        }
+
         #endregion
     }
 }

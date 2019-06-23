@@ -28,7 +28,7 @@ namespace DAL
             List<DTO_BaoCaoDoanhSo> List = new List<DTO_BaoCaoDoanhSo>();
 
             String query = string.Empty;
-            query = "select * from tblBaoCaoDoanhSo where maTG in (select id from tblThoiGian where( (nam > @startyear  and nam < @endyear) or (nam = @startyear and thang >= @startmonth and nam < @endyear ) or (nam = @endyear and thang <= @endmonth and nam > @startyear) or ( nam = @startyear and nam = @endyear and thang >= @startmonth and thang <= @endmonth) ))";
+            query = "select b.id,tenDL,tyle,sophieuxuat,tongtrigia from tblBaoCaoDoanhSo b join tbldaily d on b.maDL = d.id  where maTG in (select id from tblThoiGian where( (nam > @startyear  and nam < @endyear) or (nam = @startyear and thang >= @startmonth and nam < @endyear ) or (nam = @endyear and thang <= @endmonth and nam > @startyear) or ( nam = @startyear and nam = @endyear and thang >= @startmonth and thang <= @endmonth) ))";
             using (SqlConnection con = new SqlConnection(connectionString)) {
                 using (SqlCommand cmd = new SqlCommand()) {
                     cmd.Connection = con;
@@ -39,7 +39,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@startyear", startyear);
                     cmd.Parameters.AddWithValue("@endmonth", endmonth);
                     cmd.Parameters.AddWithValue("@endyear", endyear);
-                   // try {
+                   try {
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
 
@@ -47,20 +47,20 @@ namespace DAL
                             while (reader.Read()) {
                                 DTO_BaoCaoDoanhSo bcds = new DTO_BaoCaoDoanhSo();
                                 bcds.Id = long.Parse(reader["id"].ToString());
-                                bcds.Madaily = long.Parse(reader["maDL"].ToString());
-                            bcds.Tyle = float.Parse(reader["tyle"].ToString());
+                                bcds.Tendaily = reader["tenDL"].ToString();
+                                bcds.Tyle = float.Parse(reader["tyle"].ToString());
                                 bcds.Sophieuxuat = int.Parse(reader["soPhieuXuat"].ToString());
-                                bcds.Tongtrigia = (uint)reader.GetDecimal(3);
+                                bcds.Tongtrigia = (uint)reader.GetDecimal(4);
 
                                 List.Add(bcds);
                             }
                         }
                         con.Close();
                         con.Dispose();
-                    //} catch {
-                   //     con.Close();
-                   //     return null;
-                 //   }
+                   } catch {
+                        con.Close();
+                        return null;
+                   }
                     list = List;
                     return List;
                 }

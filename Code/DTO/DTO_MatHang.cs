@@ -26,6 +26,7 @@ namespace DTO
 
         [DisplayName("Đơn Giá")]
         public uint Dongia { get => dongia; set => dongia = value; }
+        [DisplayName("Mã đơn vị tính")]
         public long MaDVT { get => maDVT; set => maDVT = value; }
         #endregion
     }
