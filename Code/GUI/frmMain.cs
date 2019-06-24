@@ -100,10 +100,58 @@ namespace GUI
         {
             if (KiemTraTonTai("frmDaiLy") == null)
             {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
                 frmDaiLy frm = new frmDaiLy();
                 frm.MdiParent = this;
                 frm.Show();
             }
+        }
+
+        private void btnLoaiDaiLy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if(KiemTraTonTai("frmLoaiDaiLy")== null)
+            {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmLoaiDaiLy frm = new frmLoaiDaiLy();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnQuan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmQuan") == null)
+            {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmQuan frm = new frmQuan();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnPhieuXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmPhieuXuatHang") == null)
+            {
+                
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmPhieuXuatHang frm = new frmPhieuXuatHang();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+
         }
     }
 }

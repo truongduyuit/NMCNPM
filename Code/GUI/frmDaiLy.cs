@@ -58,6 +58,7 @@ namespace GUI
                 this.dataDaiLy.Columns["MaLoaiDL"].Visible = false;
                 this.dataDaiLy.Columns["MaQuan"].Visible = false;
 
+
                 List<DTO_Quan> listQuan = quan.LayDanhSachQuan();
                 List<DTO_LoaiDaiLy> listLDL = ldl.LayDanhSachLoaiDaiLy();
 
@@ -88,7 +89,6 @@ namespace GUI
 
         private void dataDaiLy_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
             if (btnThemDaiLy.Text == "Thêm Đại Lý" && btnSua.Text == "Sửa")
             {
                 try
@@ -110,7 +110,6 @@ namespace GUI
                     return;
                 }
             }
-
         }
 
         private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
@@ -298,7 +297,7 @@ namespace GUI
                         dl.MaLoaiDL = long.Parse(this.cbLoaiDaiLy.SelectedValue.ToString());
                         dl.Sdt = this.txtSoDienThoai.Text;
                         dl.DiaChi = this.txtDiaChi.Text;
-                        dl.MaQuan = long.Parse(this.cbQuan.SelectedValue.ToString());                                             
+                        dl.MaQuan = long.Parse(this.cbQuan.SelectedValue.ToString());
                         dl.TongNo = uint.Parse(this.txtTongNo.Text);
 
                         if (daily.SuaDaiLy(dl))
@@ -361,5 +360,112 @@ namespace GUI
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dataDaiLy.DataSource];
             myCurrencyManager.Refresh();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtTongNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void date_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbQuan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLoaiDaiLy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenDaiLy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataDaiLy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 }

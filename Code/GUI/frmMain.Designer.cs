@@ -66,6 +66,10 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pnlMain = new DevExpress.XtraEditors.PanelControl();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.btnPhieuXuatHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnPhieuXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -111,10 +115,11 @@
             this.btnBaoCaoCongNo,
             this.infoUser,
             this.barEditItem1,
-            this.barEditItem2});
+            this.barEditItem2,
+            this.btnPhieuXuat});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 29;
+            this.ribbon.MaxItemId = 30;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.infoUser);
             this.ribbon.PageHeaderItemLinks.Add(this.barEditItem1);
@@ -126,7 +131,7 @@
             this.tabTroGiup});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.ribbon.Size = new System.Drawing.Size(1127, 180);
+            this.ribbon.Size = new System.Drawing.Size(966, 146);
             this.ribbon.StatusBar = this.ribbonStatusBar1;
             // 
             // btnDangNhap
@@ -204,6 +209,7 @@
             this.btnLoaiDaiLy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiDaiLy.ImageOptions.LargeImage")));
             this.btnLoaiDaiLy.LargeWidth = 80;
             this.btnLoaiDaiLy.Name = "btnLoaiDaiLy";
+            this.btnLoaiDaiLy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiDaiLy_ItemClick);
             // 
             // btnQuan
             // 
@@ -213,6 +219,7 @@
             this.btnQuan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuan.ImageOptions.LargeImage")));
             this.btnQuan.LargeWidth = 80;
             this.btnQuan.Name = "btnQuan";
+            this.btnQuan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuan_ItemClick);
             // 
             // btnMatHang
             // 
@@ -316,7 +323,8 @@
             // 
             this.tabBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.btnPhieuXuatHang});
             this.tabBaoCao.Name = "tabBaoCao";
             this.tabBaoCao.Text = "Báo Cáo & Thống Kê";
             // 
@@ -349,11 +357,11 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 622);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 506);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbon;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1127, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(966, 21);
             // 
             // ribbonPageGroup2
             // 
@@ -363,23 +371,57 @@
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 180);
+            this.pnlMain.Location = new System.Drawing.Point(0, 146);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1127, 442);
+            this.pnlMain.Size = new System.Drawing.Size(966, 360);
             this.pnlMain.TabIndex = 6;
             // 
             // repositoryItemTextEdit2
             // 
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
+            // btnPhieuXuatHang
+            // 
+            this.btnPhieuXuatHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup7.ImageOptions.Image")));
+            this.btnPhieuXuatHang.ItemLinks.Add(this.btnPhieuXuat);
+            this.btnPhieuXuatHang.Name = "btnPhieuXuatHang";
+            // 
+            // btnPhieuXuat
+            // 
+            this.btnPhieuXuat.Caption = "Phiếu xuất hàng";
+            this.btnPhieuXuat.Id = 29;
+            this.btnPhieuXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuXuat.ImageOptions.Image")));
+            this.btnPhieuXuat.LargeWidth = 80;
+            this.btnPhieuXuat.Name = "btnPhieuXuat";
+            this.btnPhieuXuat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhieuXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuXuat_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Công Nợ";
+            this.barButtonItem1.Id = 22;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.LargeWidth = 80;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Công Nợ";
+            this.barButtonItem2.Id = 22;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.LargeWidth = 80;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(1127, 649);
+            this.ClientSize = new System.Drawing.Size(966, 527);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbon);
@@ -442,5 +484,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
+        private DevExpress.XtraBars.BarButtonItem btnPhieuXuat;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup btnPhieuXuatHang;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
