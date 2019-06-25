@@ -51,6 +51,7 @@
     <Compile Include="DTO_PhieuThu.cs" />
     <Compile Include="DTO_PhieuXuatHang.cs" />
     <Compile Include="DTO_Quan.cs" />
+    <Compile Include="DTO_QuyDinh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

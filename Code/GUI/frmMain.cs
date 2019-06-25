@@ -217,5 +217,20 @@ namespace GUI
                 frm.Show();
             }
         }
+
+        private void btnQuyDinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmQuyDinh") == null)
+            {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmQuyDinh frm  = new frmQuyDinh();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }

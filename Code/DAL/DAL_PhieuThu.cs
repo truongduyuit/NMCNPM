@@ -140,7 +140,8 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@sotien", Decimal.Parse(pt.Sotien.ToString()));
                     cmd.Parameters.AddWithValue("@id", pt.Id);
 
-                   // try {
+                    try
+                    {
                         con.Open();
                         if (cmd.ExecuteNonQuery() > 0) {
                             con.Close();
@@ -150,10 +151,12 @@ namespace DAL
                             con.Close();
                             return false;
                         }
-                   // } catch {
+                    }
+                    catch
+                    {
                         con.Close();
                         return false;
-                   // }
+                    }
                 }
             }
         }

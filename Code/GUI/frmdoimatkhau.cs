@@ -22,7 +22,7 @@ namespace GUI
             InitializeComponent();
         }
         private void btnConfirm_Click(object sender, EventArgs e) {
-            if(Validated())
+            if(Validatedd())
                 {
                    if(acc.CheckLogin(txtaccount.Text,txtOldPass.Text) == 0)
                     {
@@ -38,7 +38,7 @@ namespace GUI
                 
                 }
         }
-        private bool Validated() {
+        private bool Validatedd() {
             if(string.IsNullOrEmpty(txtOldPass.Text)) 
                 {
                 MessageBox.Show("Bạn chưa nhập mật khẩu cũ!");

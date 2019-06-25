@@ -51,6 +51,7 @@
     <Compile Include="BLL_PhieuThu.cs" />
     <Compile Include="BLL_PhieuXuatHang.cs" />
     <Compile Include="BLL_Quan.cs" />
+    <Compile Include="BLL_QuyDinh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
