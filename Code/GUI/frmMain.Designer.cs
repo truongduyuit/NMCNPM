@@ -63,11 +63,11 @@
             this.tabBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.tabTroGiup = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.tabTroGiup = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -136,8 +136,8 @@
             this.tabHeThong,
             this.tabQuanLy,
             this.tabBaoCao,
-            this.tabTroGiup,
-            this.ribbonPage1});
+            this.ribbonPage1,
+            this.tabTroGiup});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.ribbon.Size = new System.Drawing.Size(1127, 180);
@@ -180,6 +180,7 @@
             this.btnQuyDinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuyDinh.ImageOptions.LargeImage")));
             this.btnQuyDinh.LargeWidth = 80;
             this.btnQuyDinh.Name = "btnQuyDinh";
+            this.btnQuyDinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuyDinh_ItemClick);
             // 
             // btnThoat
             // 
@@ -372,8 +373,7 @@
             // 
             this.tabBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup6});
             this.tabBaoCao.Name = "tabBaoCao";
             this.tabBaoCao.Text = "Báo Cáo & Thống Kê";
             // 
@@ -387,10 +387,23 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBaoCaoCongNo);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
-            // ribbonPageGroup8
+            // ribbonPage1
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnPhieuXuat);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup9});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Phiếu";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnPhieuThu);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnPhieuXuat);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
             // tabTroGiup
             // 
@@ -403,18 +416,6 @@
             // 
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Phiếu";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnPhieuThu);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // repositoryItemTextEdit1
             // 
@@ -542,6 +543,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem btnPhieuXuat;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
     }
 }

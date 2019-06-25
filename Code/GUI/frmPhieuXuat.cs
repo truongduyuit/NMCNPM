@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BLL;
+﻿using BLL;
 using DTO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -17,7 +12,6 @@ namespace GUI
         private string maloaidaily;
         public string MaLoaiDaiLy { get => maloaidaily; set => maloaidaily = value; }
         private BLL_PhieuXuatHang phieuxuat = new BLL_PhieuXuatHang();
-        private BLL_ChiTietPhieuXuat chitietpx = new BLL_ChiTietPhieuXuat();
         private BLL_DaiLy daily = new BLL_DaiLy();
         public frmPhieuXuat()
         {

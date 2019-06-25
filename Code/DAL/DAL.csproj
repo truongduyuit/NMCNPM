@@ -52,6 +52,7 @@
     <Compile Include="DAL_PhieuThu.cs" />
     <Compile Include="DAL_PhieuXuatHang.cs" />
     <Compile Include="DAL_Quan.cs" />
+    <Compile Include="DAL_QuyDinh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
