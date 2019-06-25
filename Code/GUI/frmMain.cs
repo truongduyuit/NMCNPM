@@ -207,5 +207,15 @@ namespace GUI
                 frm.Show();
             }
         }
+
+        private void btnDonViTinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmDonViTinh") == null)
+            {
+                frmDonViTinh frm = new frmDonViTinh();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }
