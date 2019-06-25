@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietPhieuXuat));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMaChiTiet = new System.Windows.Forms.TextBox();
             this.cbbMaMatHang = new System.Windows.Forms.ComboBox();
             this.cbbMaDonViTinh = new System.Windows.Forms.ComboBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataChiTietPhieuXuat = new System.Windows.Forms.DataGridView();
-            this.txtMaChiTiet = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataChiTietPhieuXuat)).BeginInit();
@@ -77,6 +77,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 450);
             this.panel1.TabIndex = 19;
+            // 
+            // txtMaChiTiet
+            // 
+            this.txtMaChiTiet.Location = new System.Drawing.Point(110, 72);
+            this.txtMaChiTiet.Name = "txtMaChiTiet";
+            this.txtMaChiTiet.Size = new System.Drawing.Size(166, 20);
+            this.txtMaChiTiet.TabIndex = 29;
+            this.txtMaChiTiet.TextChanged += new System.EventHandler(this.TxtMaChiTiet_TextChanged);
             // 
             // cbbMaMatHang
             // 
@@ -255,13 +263,6 @@
             this.dataChiTietPhieuXuat.Size = new System.Drawing.Size(503, 450);
             this.dataChiTietPhieuXuat.TabIndex = 2;
             this.dataChiTietPhieuXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChiTietPhieuXuat_CellClick);
-            // 
-            // txtMaChiTiet
-            // 
-            this.txtMaChiTiet.Location = new System.Drawing.Point(110, 72);
-            this.txtMaChiTiet.Name = "txtMaChiTiet";
-            this.txtMaChiTiet.Size = new System.Drawing.Size(166, 20);
-            this.txtMaChiTiet.TabIndex = 29;
             // 
             // frmChiTietPhieuXuat
             // 

@@ -74,6 +74,7 @@ namespace GUI
 
                 CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dataChiTietPhieuXuat.DataSource];
                 myCurrencyManager.Refresh();
+               
             }
             else
             {
@@ -141,6 +142,7 @@ namespace GUI
                         ctpx.MaDvt = long.Parse(this.cbbMaDonViTinh.SelectedValue.ToString());
                         ctpx.MaMh = long.Parse(this.cbbMaMatHang.SelectedValue.ToString());
                         ctpx.SoLuong = int.Parse(this.txtSoLuong.Text);
+                        ctpx.ThanhTien = uint.Parse(this.txtThanhTien.Text);
                       
 
                         if (chitiet.ThemChiTietPX(ctpx))
@@ -196,7 +198,7 @@ namespace GUI
                     if (result == DialogResult.OK)
                     {
                         DTO_ChiTietPhieuXuat ctpx = new DTO_ChiTietPhieuXuat();
-                        ctpx.MaPx = long.Parse(this.txtMaPhieuXuat.Text);
+                        ctpx.Id = long.Parse(this.txtMaChiTiet.Text);
                         ctpx.MaDvt = long.Parse(this.cbbMaDonViTinh.SelectedValue.ToString());
                         ctpx.MaMh = long.Parse(this.cbbMaMatHang.SelectedValue.ToString());
                         ctpx.SoLuong = int.Parse(this.txtSoLuong.Text);
@@ -278,6 +280,20 @@ namespace GUI
                     ResetValue();
                 }
 
+            }
+        }
+
+        private void TxtMaChiTiet_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaPhieuXuat.Text))
+            {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+            else
+            {
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
             }
         }
     }

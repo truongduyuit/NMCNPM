@@ -60,7 +60,6 @@ namespace GUI
             List<DTO_DaiLy> listDl = daily.LayDanhSachDaiLy();
             cbbMaDaiLy.DataSource = new BindingSource(listDl, string.Empty);
             cbbMaDaiLy.DisplayMember = "Id";
-
             SetDefault(false);
         }
 
