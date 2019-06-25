@@ -100,6 +100,10 @@ namespace GUI
         {
             if (KiemTraTonTai("frmDaiLy") == null)
             {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
                 frmDaiLy frm = new frmDaiLy();
                 frm.MdiParent = this;
                 frm.Show();
@@ -109,6 +113,10 @@ namespace GUI
         private void btnDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
             {
             if (KiemTraTonTai("frmdoimatkhau") == null) {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
                 frmDoiMatKhau frm = new frmDoiMatKhau();
                 
                 frm.MdiParent = this;
@@ -118,6 +126,10 @@ namespace GUI
 
         private void btnMatHang_ItemClick(object sender, ItemClickEventArgs e) {
             if (KiemTraTonTai("frmmathang") == null) {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
                 frmMatHang frm = new frmMatHang();
 
                 frm.MdiParent = this;
@@ -127,6 +139,10 @@ namespace GUI
 
         private void btnBaoCaoDoanhSo_ItemClick(object sender, ItemClickEventArgs e) {
             if (KiemTraTonTai("frmbaocaodoanhso") == null) {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
                 frmbaocaodoanhso frm = new frmbaocaodoanhso();
 
                 frm.MdiParent = this;
@@ -136,7 +152,56 @@ namespace GUI
 
         private void btnPhieuThu_ItemClick(object sender, ItemClickEventArgs e) {
             if (KiemTraTonTai("frmPhieuThu") == null) {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
                 frmPhieuThu frm = new frmPhieuThu();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void BtnLoaiDaiLy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmLoaiDaiLy") == null)
+            {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmLoaiDaiLy frm = new frmLoaiDaiLy();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void BtnQuan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmQuan") == null)
+            {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmQuan frm = new frmQuan();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void BtnPhieuXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmPhieuXuat") == null)
+            {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmPhieuXuat frm = new frmPhieuXuat();
 
                 frm.MdiParent = this;
                 frm.Show();

@@ -44,11 +44,13 @@
   <ItemGroup>
     <Compile Include="DAL_Account.cs" />
     <Compile Include="DAL_BaoCaoDoanhSo.cs" />
+    <Compile Include="DAL_ChiTietPhieuXuat.cs" />
     <Compile Include="DAL_DaiLy.cs" />
     <Compile Include="DAL_DonViTinh.cs" />
     <Compile Include="DAL_LoaiDaiLy.cs" />
     <Compile Include="DAL_MatHang.cs" />
     <Compile Include="DAL_PhieuThu.cs" />
+    <Compile Include="DAL_PhieuXuatHang.cs" />
     <Compile Include="DAL_Quan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

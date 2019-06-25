@@ -73,6 +73,8 @@
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnPhieuXuat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -121,10 +123,11 @@
             this.barEditItem2,
             this.barButtonItem1,
             this.btnPhieuThu,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.btnPhieuXuat});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 32;
+            this.ribbon.MaxItemId = 33;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.infoUser);
             this.ribbon.PageHeaderItemLinks.Add(this.barEditItem1);
@@ -216,6 +219,7 @@
             this.btnLoaiDaiLy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiDaiLy.ImageOptions.LargeImage")));
             this.btnLoaiDaiLy.LargeWidth = 80;
             this.btnLoaiDaiLy.Name = "btnLoaiDaiLy";
+            this.btnLoaiDaiLy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLoaiDaiLy_ItemClick);
             // 
             // btnQuan
             // 
@@ -225,6 +229,7 @@
             this.btnQuan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuan.ImageOptions.LargeImage")));
             this.btnQuan.LargeWidth = 80;
             this.btnQuan.Name = "btnQuan";
+            this.btnQuan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnQuan_ItemClick);
             // 
             // btnMatHang
             // 
@@ -262,6 +267,7 @@
             this.btnBaoCaoCongNo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoCongNo.ImageOptions.LargeImage")));
             this.btnBaoCaoCongNo.LargeWidth = 80;
             this.btnBaoCaoCongNo.Name = "btnBaoCaoCongNo";
+            this.btnBaoCaoCongNo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // infoUser
             // 
@@ -356,7 +362,8 @@
             // 
             this.tabBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup8});
             this.tabBaoCao.Name = "tabBaoCao";
             this.tabBaoCao.Text = "Báo Cáo & Thống Kê";
             // 
@@ -443,6 +450,20 @@
             this.barButtonItem3.LargeWidth = 80;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnPhieuXuat);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            // 
+            // btnPhieuXuat
+            // 
+            this.btnPhieuXuat.Caption = "Phiếu xuất hàng";
+            this.btnPhieuXuat.Id = 32;
+            this.btnPhieuXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btnPhieuXuat.Name = "btnPhieuXuat";
+            this.btnPhieuXuat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhieuXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhieuXuat_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,5 +540,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnPhieuXuat;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }
