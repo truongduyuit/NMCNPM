@@ -57,5 +57,126 @@ namespace DAL
 
             return ds;
         }
+        public bool ThemDonViTinh(DTO_DonViTinh dvt)
+        {
+            string query = string.Empty;
+            query += "INSERT INTO [tblDonViTinh] ([tenDVT]) ";
+            query += "VALUES (@tendvt)";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@tendvt", dvt.Ten);
+
+                    try
+                    {
+                        con.Open();
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            con.Close();
+                            con.Dispose();
+                            return true;
+                        }
+                        else
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+                    catch
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public bool XoaDonViTinh(long id)
+        {
+            string query = string.Empty;
+            query += "DELETE FROM [tblDonViTinh] where [id] = @id";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    try
+                    {
+                        con.Open();
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            con.Close();
+                            con.Dispose();
+                            return true;
+                        }
+                        else
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+                    catch
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public bool SuaDonViTinh(DTO_DonViTinh dvt)
+        {
+            string query = string.Empty;
+            query = "UPDATE [tblDonViTinh] " + "SET [tenDVT] = @tendl " + "WHERE [id] = @id";
+            //query = "SuaDaiLy";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@tendl", dvt.Ten);
+                    cmd.Parameters.AddWithValue("@id", dvt.Id);
+
+
+                    try
+                    {
+                        con.Open();
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            con.Close();
+                            con.Dispose();
+                            return true;
+                        }
+                        else
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+                    catch
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }
