@@ -7,30 +7,30 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-
-
 namespace DAL
 {
-    public class DAL_LoaiDaiLy
+    public class DAL_ChiTietPhieuXuat
     {
         private string connectionString;
-        public string ConnectionString { get => connectionString; set => connectionString = value; }
 
-        public DAL_LoaiDaiLy()
+        public string ConnectionString
+        {
+            get { return connectionString; }
+            set { connectionString = value; }
+        }
+
+        public DAL_ChiTietPhieuXuat()
         {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
-
-        public List<DTO_LoaiDaiLy> LayDanhSachLoaiDaiLy()
+        public List<DTO_ChiTietPhieuXuat> LayDanhSachChiTiet()
         {
-            List<DTO_LoaiDaiLy> ls = new List<DTO_LoaiDaiLy>();
+            List<DTO_ChiTietPhieuXuat> ds = new List<DTO_ChiTietPhieuXuat>();
 
-            string query = "SELECT * FROM tblLoaiDaiLy";
+            string query = string.Empty;
+            query = "SELECT * FROM tblChiTietPX";
 
-            using(SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -45,13 +45,16 @@ namespace DAL
 
                         if (reader.HasRows == true)
                         {
-                            while(reader.Read())
+                            while (reader.Read())
                             {
-                                DTO_LoaiDaiLy ldl = new DTO_LoaiDaiLy();
-                                ldl.Id = long.Parse(reader["id"].ToString());
-                                ldl.TenLoaiDaiLy = reader.GetString(1);
-                                ldl.NoToiDa = (uint)reader.GetDecimal(2);
-                                ls.Add(ldl);
+                                DTO_ChiTietPhieuXuat ctpx = new DTO_ChiTietPhieuXuat();
+                                ctpx.Id = long.Parse(reader["id"].ToString());
+                                ctpx.MaPx = long.Parse(reader["maPX"].ToString());
+                                ctpx.MaDvt = long.Parse(reader["maDVT"].ToString());
+                                ctpx.MaMh = long.Parse(reader["maMH"].ToString());
+                                ctpx.SoLuong = int.Parse(reader["soLuong"].ToString());
+                                ctpx.ThanhTien = (uint)reader.GetDecimal(5);
+                                ds.Add(ctpx);
                             }
                         }
                         con.Close();
@@ -63,17 +66,17 @@ namespace DAL
                         return null;
                     }
                 }
-
             }
 
-            return ls;
+            return ds;
         }
-        public bool ThemLoaiDaiLy(DTO_LoaiDaiLy ldl)
+        public bool ThemChiTiet(DTO_ChiTietPhieuXuat chitiet)
         {
+
             string query = string.Empty;
-            query += "INSERT INTO [tblLoaiDaiLy] ([tenLDL], [noToiDa]) ";
-            query += "VALUES (@tenldl, @notoida)";
-            
+            query += "INSERT INTO [tblChiTietPX] ([maPX], [maDVT], [maMH], [soLuong] ";
+            query += "VALUES (@mapx, @madvt, @mamh, @soluong)";
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -81,8 +84,11 @@ namespace DAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@tenldl", ldl.TenLoaiDaiLy);
-                    cmd.Parameters.AddWithValue("@notoida", decimal.Parse(ldl.NoToiDa.ToString()));
+
+                    cmd.Parameters.AddWithValue("@mapx", chitiet.MaPx);
+                    cmd.Parameters.AddWithValue("@madvt",chitiet.MaDvt);
+                    cmd.Parameters.AddWithValue("@mamh", chitiet.MaMh);
+                    cmd.Parameters.AddWithValue("@soluong", chitiet.SoLuong);
 
                     try
                     {
@@ -107,54 +113,10 @@ namespace DAL
                 }
             }
         }
-        public bool SuaLoaiDaiLy(DTO_LoaiDaiLy ldl)
+        public bool XoaChiTiet(long id)
         {
             string query = string.Empty;
-            query = "UPDATE [tblLoaiDaiLy] " +
-                "SET [tenLDL] = @tenldl , [noToiDa] = @notoida " +
-                "WHERE [id] = @id";
-            //query = "SuaDaiLy";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.CommandText = query;
-
-                    cmd.Parameters.AddWithValue("@tenldl", ldl.TenLoaiDaiLy);
-                    cmd.Parameters.AddWithValue("@noToiDa", Decimal.Parse(ldl.NoToiDa.ToString()));
-                    cmd.Parameters.AddWithValue("@id", ldl.Id);
-
-                    try
-                    {
-                        con.Open();
-                        if (cmd.ExecuteNonQuery() > 0)
-                        {
-                            con.Close();
-                            con.Dispose();
-                            return true;
-                        }
-                        else
-                        {
-                            con.Close();
-                            return false;
-                        }
-                    }
-                    catch
-                    {
-                        con.Close();
-                        return false;
-                    }
-                }
-            }
-        }
-        public bool XoaLoaiDaiLy(long id)
-        {
-            string query = string.Empty;
-            query += "DELETE FROM [tblLoaiDaiLy] where [id] = @id";
+            query += "DELETE FROM [tblChiTietPX] where [id] = @id";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -189,21 +151,59 @@ namespace DAL
                 }
             }
         }
-        public List<DTO_LoaiDaiLy> TimKiemLoaiDaiLy(string tukhoa)
+        public bool SuaChiTietPX(DTO_ChiTietPhieuXuat ctpx)
         {
-            List<DTO_LoaiDaiLy> ds = new List<DTO_LoaiDaiLy>();
-            long tk;
             string query = string.Empty;
-            if (long.TryParse(tukhoa, out tk))
+            query = "UPDATE [tblChiTietPX] " +
+                "SET [maDVT] = @madvt , [maMH] = @mamh, [soLuong] = @soluong " +
+                "WHERE [id] = @id";
+            //query = "SuaDaiLy";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                query += "SELECT * FROM [tblLoaiDaiLy]";
-                query += "WHERE [id]= @tukhoa";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@madvt", ctpx.MaDvt);
+                    cmd.Parameters.AddWithValue("@mamh", ctpx.MaMh);
+                    cmd.Parameters.AddWithValue("@soluong", ctpx.SoLuong);
+
+                    try
+                    {
+                        con.Open();
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            con.Close();
+                            con.Dispose();
+                            return true;
+                        }
+                        else
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+                    catch
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
             }
-            else
-            {
-                query += "SELECT * FROM [tblLoaiDaiLy]";
-                query += "WHERE [tenLDL] = @tukhoa";
-            }
+        }
+        public List<DTO_ChiTietPhieuXuat> timkiem(string tukhoa)
+        {
+            List<DTO_ChiTietPhieuXuat> ds = new List<DTO_ChiTietPhieuXuat>();
+
+            string query = string.Empty;
+            query += "SELECT * FROM [tblChiTietPX]";
+            query += "WHERE [id] = @tukhoa";
+       
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -213,7 +213,6 @@ namespace DAL
                     cmd.CommandText = query;
 
                     cmd.Parameters.AddWithValue("@tukhoa", tukhoa);
-                 
 
                     try
                     {
@@ -224,11 +223,14 @@ namespace DAL
                         {
                             while (reader.Read())
                             {
-                                DTO_LoaiDaiLy ldl = new DTO_LoaiDaiLy();
-                                ldl.Id = long.Parse(reader["id"].ToString());
-                                ldl.TenLoaiDaiLy = reader.GetString(1);
-                                ldl.NoToiDa = (uint)reader.GetDecimal(2);
-                                ds.Add(ldl);
+                                DTO_ChiTietPhieuXuat ctpx = new DTO_ChiTietPhieuXuat();
+                                ctpx.Id = long.Parse(reader["id"].ToString());
+                                ctpx.MaPx = long.Parse(reader["maPX"].ToString());
+                                ctpx.MaDvt = long.Parse(reader["maDVT"].ToString());
+                                ctpx.MaMh = long.Parse(reader["maMH"].ToString());
+                                ctpx.SoLuong = int.Parse(reader["soLuong"].ToString());
+                                ctpx.ThanhTien = (uint)reader.GetDecimal(5);
+                                ds.Add(ctpx);
                             }
                         }
                         con.Close();

@@ -62,6 +62,12 @@
     <Compile Include="frmbaocaodoanhso.Designer.cs">
       <DependentUpon>frmbaocaodoanhso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChiTietPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietPhieuXuat.Designer.cs">
+      <DependentUpon>frmChiTietPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDaiLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaiDaiLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiDaiLy.Designer.cs">
+      <DependentUpon>frmLoaiDaiLy.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMatHang.cs">
       <SubType>Form</SubType>
@@ -98,6 +110,18 @@
     <Compile Include="frmPhieuThu.Designer.cs">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuXuat.Designer.cs">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuan.Designer.cs">
+      <DependentUpon>frmQuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ucMain.cs">
@@ -109,6 +133,9 @@
     <EmbeddedResource Include="frmbaocaodoanhso.resx">
       <DependentUpon>frmbaocaodoanhso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietPhieuXuat.resx">
+      <DependentUpon>frmChiTietPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDaiLy.resx">
       <DependentUpon>frmDaiLy.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +145,9 @@
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiDaiLy.resx">
+      <DependentUpon>frmLoaiDaiLy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMatHang.resx">
       <DependentUpon>frmMatHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuThu.resx">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuXuat.resx">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuan.resx">
+      <DependentUpon>frmQuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
