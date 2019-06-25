@@ -74,8 +74,8 @@ namespace DAL
         {
 
             string query = string.Empty;
-            query += "INSERT INTO [tblChiTietPX] ([maPX], [maDVT], [maMH], [soLuong] ";
-            query += "VALUES (@mapx, @madvt, @mamh, @soluong)";
+            query += "INSERT [dbo].[tblChiTietPX] ([maPX], [maDVT], [maMH], [soLuong],[thanhTien])";
+            query += "VALUES (@mapx, @madvt, @mamh, @soluong, @thanhTien)";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -89,7 +89,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@madvt",chitiet.MaDvt);
                     cmd.Parameters.AddWithValue("@mamh", chitiet.MaMh);
                     cmd.Parameters.AddWithValue("@soluong", chitiet.SoLuong);
-
+                    cmd.Parameters.AddWithValue("@thanhTien", Decimal.Parse(chitiet.ThanhTien.ToString()));
                     try
                     {
                         con.Open();
@@ -171,6 +171,8 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@madvt", ctpx.MaDvt);
                     cmd.Parameters.AddWithValue("@mamh", ctpx.MaMh);
                     cmd.Parameters.AddWithValue("@soluong", ctpx.SoLuong);
+                    cmd.Parameters.AddWithValue("@id", ctpx.Id);
+
 
                     try
                     {
@@ -201,7 +203,7 @@ namespace DAL
 
             string query = string.Empty;
             query += "SELECT * FROM [tblChiTietPX]";
-            query += "WHERE [id] = @tukhoa";
+            query += "WHERE [maPX] = @tukhoa";
        
 
             using (SqlConnection con = new SqlConnection(connectionString))
