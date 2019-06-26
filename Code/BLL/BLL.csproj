@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL_Account.cs" />
+    <Compile Include="BLL_BaoCaoCongNo.cs" />
     <Compile Include="BLL_BaoCaoDoanhSo.cs" />
     <Compile Include="BLL_ChiTietPhieuXuat.cs" />
     <Compile Include="BLL_DaiLy.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="BLL_PhieuXuatHang.cs" />
     <Compile Include="BLL_Quan.cs" />
     <Compile Include="BLL_QuyDinh.cs" />
+    <Compile Include="BLL_ThoiGian.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

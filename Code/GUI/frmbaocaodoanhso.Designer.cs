@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmbaocaodoanhso
+    partial class frmBaoCaoDoanhSo
     {
         /// <summary>
         /// Required designer variable.
@@ -25,7 +25,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmbaocaodoanhso));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoDoanhSo));
             this.dtpkNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.dtpkNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();

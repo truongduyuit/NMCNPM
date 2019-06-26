@@ -116,7 +116,7 @@ namespace DAL
         public bool XoaDaiLy(long id)
         {
             string query = string.Empty;
-            query += "DELETE FROM [tblDaiLy] where [id] = @id";
+            query += "DELETE FROM [tblDaiLy] WHERE [id] = @id";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {

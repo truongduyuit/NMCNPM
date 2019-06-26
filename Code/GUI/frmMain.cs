@@ -143,7 +143,7 @@ namespace GUI
                 {
                     frm1.Close();
                 }
-                frmbaocaodoanhso frm = new frmbaocaodoanhso();
+                frmBaoCaoDoanhSo frm = new frmBaoCaoDoanhSo();
 
                 frm.MdiParent = this;
                 frm.Show();
@@ -227,6 +227,21 @@ namespace GUI
                     frm1.Close();
                 }
                 frmQuyDinh frm  = new frmQuyDinh();
+
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnBaoCaoCongNo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (KiemTraTonTai("frmBaoCaoCongNo") == null)
+            {
+                foreach (Form frm1 in MdiChildren)
+                {
+                    frm1.Close();
+                }
+                frmBaoCaoCongNo frm = new frmBaoCaoCongNo();
 
                 frm.MdiParent = this;
                 frm.Show();

@@ -243,5 +243,51 @@ namespace DAL
                 }
             }
         }
+
+        public uint TongXuat(long madl, int thang, int nam)
+        {
+            uint tt = 0;
+            string query = string.Empty;
+            query += "SELECT sum(tongTriGia) FROM [tblPhieuXuat] ";
+            query += "WHERE maDL =@madl and MONTH(ngayLapPhieu) = @thang and YEAR(ngayLapPhieu) = @nam";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@madl", madl);
+                    cmd.Parameters.AddWithValue("@thang", thang);
+                    cmd.Parameters.AddWithValue("@nam", nam);
+
+                    try
+                    {
+                        con.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                tt = (uint)reader.GetDecimal(0);
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch
+                    {
+                        con.Close();
+                    }
+                }
+            }
+
+            return tt;
+        }
     }
 }

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Account.cs" />
+    <Compile Include="DAL_BaoCaoCongNo.cs" />
     <Compile Include="DAL_BaoCaoDoanhSo.cs" />
     <Compile Include="DAL_ChiTietPhieuXuat.cs" />
     <Compile Include="DAL_DaiLy.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="DAL_PhieuXuatHang.cs" />
     <Compile Include="DAL_Quan.cs" />
     <Compile Include="DAL_QuyDinh.cs" />
+    <Compile Include="DAL_ThoiGian.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
