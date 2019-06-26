@@ -65,7 +65,6 @@ namespace GUI
             txtSDT.DataBindings.Add(new Binding("text", cbDaiLy.DataSource, "Sdt"));
             dataPhieuThu.DataSource = pt.LayDanhSachPhieuThu();
         }
-        #endregion
 
         private void dataPhieuThu_CellClick(object sender, DataGridViewCellEventArgs e) {
 
@@ -171,5 +170,6 @@ namespace GUI
 
             }
         }
+        #endregion
     }
 }

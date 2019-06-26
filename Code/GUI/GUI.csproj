@@ -56,11 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmbaocaodoanhso.cs">
+    <Compile Include="frmBaoCaoCongNo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmbaocaodoanhso.Designer.cs">
-      <DependentUpon>frmbaocaodoanhso.cs</DependentUpon>
+    <Compile Include="frmBaoCaoCongNo.Designer.cs">
+      <DependentUpon>frmBaoCaoCongNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoDoanhSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoDoanhSo.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhSo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietPhieuXuat.cs">
       <SubType>Form</SubType>
@@ -142,8 +148,11 @@
     <Compile Include="ucMain.Designer.cs">
       <DependentUpon>ucMain.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmbaocaodoanhso.resx">
-      <DependentUpon>frmbaocaodoanhso.cs</DependentUpon>
+    <EmbeddedResource Include="frmBaoCaoCongNo.resx">
+      <DependentUpon>frmBaoCaoCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoDoanhSo.resx">
+      <DependentUpon>frmBaoCaoDoanhSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietPhieuXuat.resx">
       <DependentUpon>frmChiTietPhieuXuat.cs</DependentUpon>

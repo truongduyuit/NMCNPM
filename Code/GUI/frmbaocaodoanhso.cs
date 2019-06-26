@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using BLL;
 namespace GUI
 {
-    public partial class frmbaocaodoanhso : Form
+    public partial class frmBaoCaoDoanhSo : Form
     {
         BLL_BaoCaoDoanhSo baocao = new BLL_BaoCaoDoanhSo();
-        public frmbaocaodoanhso() {
+        public frmBaoCaoDoanhSo() {
             InitializeComponent();
         }
 

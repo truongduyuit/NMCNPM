@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_Account.cs" />
+    <Compile Include="DTO_BaoCaoCongNo.cs" />
     <Compile Include="DTO_BaoCaoDoanhSo.cs" />
     <Compile Include="DTO_ChiTietPhieuXuat.cs" />
     <Compile Include="DTO_DaiLy.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="DTO_PhieuXuatHang.cs" />
     <Compile Include="DTO_Quan.cs" />
     <Compile Include="DTO_QuyDinh.cs" />
+    <Compile Include="DTO_ThoiGian.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

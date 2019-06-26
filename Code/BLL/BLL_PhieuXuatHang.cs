@@ -31,5 +31,10 @@ namespace BLL
         {
             return pxh.XoaPhieuXuat(id);
         }
+
+        public uint LayTongXuat(long madl, int thang, int nam)
+        {
+            return pxh.TongXuat(madl, thang, nam);
+        }
     }
 }
