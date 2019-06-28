@@ -137,7 +137,7 @@
             this.ribbonPage1});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.ribbon.Size = new System.Drawing.Size(1127, 180);
+            this.ribbon.Size = new System.Drawing.Size(966, 146);
             this.ribbon.StatusBar = this.ribbonStatusBar1;
             // 
             // btnDangNhap
@@ -317,6 +317,7 @@
             this.btnPhieuXuat.Caption = "Phiếu xuất hàng";
             this.btnPhieuXuat.Id = 32;
             this.btnPhieuXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuXuat.ImageOptions.Image")));
+            this.btnPhieuXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhieuXuat.ImageOptions.LargeImage")));
             this.btnPhieuXuat.Name = "btnPhieuXuat";
             this.btnPhieuXuat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnPhieuXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhieuXuat_ItemClick);
@@ -410,11 +411,11 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 622);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 506);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbon;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1127, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(966, 21);
             // 
             // ribbonPageGroup2
             // 
@@ -424,10 +425,10 @@
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 180);
+            this.pnlMain.Location = new System.Drawing.Point(0, 146);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1127, 442);
+            this.pnlMain.Size = new System.Drawing.Size(966, 360);
             this.pnlMain.TabIndex = 6;
             // 
             // repositoryItemTextEdit2
@@ -454,11 +455,11 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(1127, 649);
+            this.ClientSize = new System.Drawing.Size(966, 527);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbon);

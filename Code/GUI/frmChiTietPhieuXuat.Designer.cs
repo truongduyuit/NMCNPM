@@ -272,7 +272,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Name = "frmChiTietPhieuXuat";
-            this.Text = "frmChiTietPhieuXuat";
+            this.Text = "CHI TIẾT PHIẾU XUẤT";
             this.Load += new System.EventHandler(this.FrmChiTietPhieuXuat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
