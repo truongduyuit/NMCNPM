@@ -23,15 +23,10 @@ namespace GUI
         }
         private bool KiemTra()
         {
-            if (string.IsNullOrEmpty(txtMaQuan.Text.Trim()))
-            {
-                MessageBox.Show("Bạn phải nhập tên đại lý", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMaQuan.Focus();
-                return false;
-            }
+            
             if (string.IsNullOrEmpty(txtTenQuan.Text.Trim()))
             {
-                MessageBox.Show("Bạn phải chọn loại đại lý", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn phải chọn tên quận", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTenQuan.Focus();
                 return false;
             }
