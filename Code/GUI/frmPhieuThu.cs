@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,6 +93,7 @@ namespace GUI
             dtpkNgayThu.Enabled = false;
             this.numSoTien.Enabled = status;
             dataPhieuThu.Enabled = !status;
+            btnXuatFile.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e) {
@@ -170,6 +172,74 @@ namespace GUI
 
             }
         }
+
+
+        private void btnXuatFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PrintDialog _PrintDialog = new PrintDialog();
+                PrintDocument _PrintDocument = new PrintDocument();
+                _PrintDialog.Document = _PrintDocument; //add the document to the dialog box
+
+                _PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(_CreateReceipt); //add an event handler that will do the printing
+                                                                                                               //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                DialogResult result = _PrintDialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    _PrintDocument.Print();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void _CreateReceipt(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics graphic = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float FontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+
+            graphic.DrawString("PHIẾU THU", new Font("Courier New", 28), new SolidBrush(Color.Black), startX, startY);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("Đại lý: ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(cbDaiLy.Text, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("Địa chỉ: ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(txtDiaChi.Text, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("Ngày thu: ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(dtpkNgayThu.Text, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("Số tiền: ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(numSoTien.Text, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight; //make the spacing consistent
+            graphic.DrawString("--------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
+
+            offset = offset + (int)FontHeight + 25; //make the spacing consistent              
+            graphic.DrawString("Trân thành cảm ơn quý khách hàng!", font, new SolidBrush(Color.Black), startX, startY + offset);
+        }
+
         #endregion
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtId.Text != string.Empty)
+            {
+                btnXuatFile.Enabled = true;
+            }
+        }
     }
 }

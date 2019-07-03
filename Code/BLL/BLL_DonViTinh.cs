@@ -19,6 +19,11 @@ namespace BLL
         {
             return _dvt.ThemDonViTinh(dvt);
         }
+
+        public string LayDonViTinh(long id)
+        {
+            return _dvt.LayDonViTinh(id);
+        }
         public bool XoaDonViTinh(long id)
         {
             return _dvt.XoaDonViTinh(id);

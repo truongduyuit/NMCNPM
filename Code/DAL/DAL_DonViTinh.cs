@@ -57,6 +57,49 @@ namespace DAL
 
             return ds;
         }
+
+        public string LayDonViTinh(long id)
+        {
+            string ds = string.Empty;
+
+            string query = string.Empty;
+            query = "SELECT * FROM tblDonViTinh WHERE [id] = @id";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@id", id);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                               ds = reader.GetString(1);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+
+            return ds;
+        }
+
         public bool ThemDonViTinh(DTO_DonViTinh dvt)
         {
             string query = string.Empty;

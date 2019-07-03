@@ -18,6 +18,11 @@ namespace BLL
             return mathang.LayDanhSachMatHang();
         }
 
+        public string LayDanhSachMatHang(long id)
+        {
+            return mathang.LayDanhSachMatHang(id);
+        }
+
         public bool ThemMatHang(DTO_MatHang dl) {
             return mathang.ThemMatHang(dl);
         }

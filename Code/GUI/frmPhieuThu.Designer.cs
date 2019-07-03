@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbPhieuThu = new System.Windows.Forms.Label();
+            this.btnXuatFile = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPhieuThu)).BeginInit();
             this.panel3.SuspendLayout();
@@ -60,7 +61,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1333, 667);
             this.panel1.TabIndex = 0;
@@ -71,7 +72,7 @@
             this.dataPhieuThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPhieuThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataPhieuThu.Location = new System.Drawing.Point(436, 106);
-            this.dataPhieuThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataPhieuThu.Margin = new System.Windows.Forms.Padding(4);
             this.dataPhieuThu.Name = "dataPhieuThu";
             this.dataPhieuThu.Size = new System.Drawing.Size(897, 561);
             this.dataPhieuThu.TabIndex = 1;
@@ -79,6 +80,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnXuatFile);
             this.panel3.Controls.Add(this.txtId);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.btnXoa);
@@ -96,7 +98,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 106);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(436, 561);
             this.panel3.TabIndex = 0;
@@ -105,10 +107,11 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(139, 44);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(239, 22);
             this.txtId.TabIndex = 25;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // label4
             // 
@@ -148,7 +151,7 @@
             this.btnThemPhieuThu.Location = new System.Drawing.Point(36, 375);
             this.btnThemPhieuThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemPhieuThu.Name = "btnThemPhieuThu";
-            this.btnThemPhieuThu.Size = new System.Drawing.Size(343, 65);
+            this.btnThemPhieuThu.Size = new System.Drawing.Size(164, 65);
             this.btnThemPhieuThu.TabIndex = 21;
             this.btnThemPhieuThu.Text = "Thêm Phiếu Thu";
             this.btnThemPhieuThu.Click += new System.EventHandler(this.btnXacNhan_Click);
@@ -156,7 +159,7 @@
             // numSoTien
             // 
             this.numSoTien.Location = new System.Drawing.Point(139, 295);
-            this.numSoTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numSoTien.Margin = new System.Windows.Forms.Padding(4);
             this.numSoTien.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -172,7 +175,7 @@
             this.dtpkNgayThu.Enabled = false;
             this.dtpkNgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkNgayThu.Location = new System.Drawing.Point(139, 194);
-            this.dtpkNgayThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpkNgayThu.Margin = new System.Windows.Forms.Padding(4);
             this.dtpkNgayThu.Name = "dtpkNgayThu";
             this.dtpkNgayThu.Size = new System.Drawing.Size(239, 22);
             this.dtpkNgayThu.TabIndex = 3;
@@ -182,7 +185,7 @@
             // 
             this.txtSDT.Enabled = false;
             this.txtSDT.Location = new System.Drawing.Point(139, 145);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(239, 22);
             this.txtSDT.TabIndex = 2;
@@ -191,7 +194,7 @@
             // 
             this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Location = new System.Drawing.Point(139, 244);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(239, 22);
             this.txtDiaChi.TabIndex = 2;
@@ -201,7 +204,7 @@
             this.cbDaiLy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDaiLy.FormattingEnabled = true;
             this.cbDaiLy.Location = new System.Drawing.Point(139, 95);
-            this.cbDaiLy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDaiLy.Margin = new System.Windows.Forms.Padding(4);
             this.cbDaiLy.Name = "cbDaiLy";
             this.cbDaiLy.Size = new System.Drawing.Size(239, 24);
             this.cbDaiLy.TabIndex = 1;
@@ -261,7 +264,7 @@
             this.panel2.Controls.Add(this.lbPhieuThu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1333, 106);
             this.panel2.TabIndex = 0;
@@ -277,13 +280,24 @@
             this.lbPhieuThu.TabIndex = 0;
             this.lbPhieuThu.Text = "PHIẾU THU";
             // 
+            // btnXuatFile
+            // 
+            this.btnXuatFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatFile.ImageOptions.Image")));
+            this.btnXuatFile.Location = new System.Drawing.Point(215, 375);
+            this.btnXuatFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXuatFile.Name = "btnXuatFile";
+            this.btnXuatFile.Size = new System.Drawing.Size(165, 65);
+            this.btnXuatFile.TabIndex = 31;
+            this.btnXuatFile.Text = "Xuất File";
+            this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
+            // 
             // frmPhieuThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 667);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPhieuThu";
             this.Text = "PHIẾU THU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -321,5 +335,6 @@
         private DevExpress.XtraEditors.SimpleButton btnThemPhieuThu;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.SimpleButton btnXuatFile;
     }
 }

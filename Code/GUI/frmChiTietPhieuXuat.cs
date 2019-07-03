@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,11 @@ namespace GUI
             txtMaPhieuXuat.Text = id;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+
+            if (dataChiTietPhieuXuat.Rows.Count == 0)
+            {
+                btnXuatFile.Enabled = false;
+            }
             if (chitiet.timkiem(txtMaPhieuXuat.Text) != null)
             {
                 this.dataChiTietPhieuXuat.DataSource = chitiet.timkiem(txtMaPhieuXuat.Text);
@@ -232,9 +238,11 @@ namespace GUI
             {
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
+                //btnXuatFile.Enabled = false;
             }
             else
             {
+                //btnXuatFile.Enabled = true;
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
@@ -295,6 +303,74 @@ namespace GUI
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
+        }
+
+        private void btnXuatFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PrintDialog _PrintDialog = new PrintDialog();
+                PrintDocument _PrintDocument = new PrintDocument();
+                _PrintDialog.Document = _PrintDocument; //add the document to the dialog box
+
+                _PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(_CreateReceipt); //add an event handler that will do the printing
+                                                                                                               //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                DialogResult result = _PrintDialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    _PrintDocument.Print();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void _CreateReceipt(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics graphic = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float FontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+
+            graphic.DrawString("CHI TIẾT PHIẾU XUẤT", new Font("Courier New", 28), new SolidBrush(Color.Black), startX, startY);
+            string top = "Mặt hàng".PadRight(20) + "Đơn vị tính".PadRight(20) + "Số Lượng".PadRight(20)+"Thành tiền";
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight; //make the spacing consistent
+            graphic.DrawString("--------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
+
+            foreach (DataGridViewRow row in dataChiTietPhieuXuat.Rows)
+            {               
+                graphic.DrawString(mathang.LayDanhSachMatHang(long.Parse(row.Cells[3].Value.ToString())), font, new SolidBrush(Color.Black), startX, startY + offset);
+                graphic.DrawString(donvitinh.LayDonViTinh(long.Parse(row.Cells[2].Value.ToString())), font, new SolidBrush(Color.Black), startX + 200, startY + offset);
+                graphic.DrawString(row.Cells[4].Value.ToString(), font, new SolidBrush(Color.Black), startX + 450, startY + offset);
+                graphic.DrawString(row.Cells[5].Value.ToString(), font, new SolidBrush(Color.Black), startX + 650, startY + offset);
+                offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            }
+            offset = offset + 20; //make some room so that the total stands out.
+            graphic.DrawString("--------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + 20; //make some room so that the total stands out.
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("Đại lý: ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(txtMaPhieuXuat.Text, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("Nhân viên: ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(txtSoLuong.Text, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            //offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            //graphic.DrawString("Ngày (mm/dd/yyyy):  ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            //graphic.DrawString(txtThanhTien.Value.ToShortDateString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+
+            offset = offset + (int)FontHeight + 25; //make the spacing consistent              
+            graphic.DrawString("Trân thành cảm ơn quý khách hàng!", font, new SolidBrush(Color.Black), startX, startY + offset);
         }
     }
 }

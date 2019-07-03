@@ -62,6 +62,48 @@ namespace DAL
             return ds;
         }
 
+        public string LayDanhSachMatHang(long id)
+        {
+            string ds = string.Empty;
+
+            string query = string.Empty;
+            query = "SELECT * FROM tblMatHang WHERE [id] = @id";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@id", id);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                ds = reader.GetString(1);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+
+            return ds;
+        }
+
         public bool ThemMatHang(DTO_MatHang mh) {
             string query = string.Empty;
             query += "INSERT INTO tblMatHang ([tenMatHang],[DonGia],[maDonViTinh]) ";
